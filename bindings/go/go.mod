@@ -1,4 +1,4 @@
-module github.com/tree-sitter/tree-sitter-kanata
+module github.com/postsolar/tree-sitter-kanata
 
 go 1.22
 
