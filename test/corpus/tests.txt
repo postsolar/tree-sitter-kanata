@@ -1,0 +1,56 @@
+======
+Empty list
+=====
+
+()
+
+( )
+
+(
+
+)
+
+-----
+
+=====
+List of one item
+=====
+
+(defsrc)
+
+(
+  defsrc
+)
+
+-----
+
+=====
+List of multiple items
+=====
+
+(defsrc
+  lctl lmet lalt spc ralt rctl
+)
+
+-----
+
+=====
+Lists with quoted items
+=====
+
+(xyz "a b c d")
+
+-----
+
+=====
+Nested lists
+=====
+
+(defcfg
+  linux-dev ("/dev/input/by-path/platform-i8042-serio-0-event-kbd")
+)
+
+(deflayermap (my-alt))
+
+-----
+
