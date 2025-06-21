@@ -1,6 +1,6 @@
 {
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/grammar.schema.json",
   "name": "kanata",
-  "inherits": null,
   "rules": {
     "kanata": {
       "type": "REPEAT",
@@ -18,7 +18,7 @@
         },
         {
           "type": "PATTERN",
-          "value": ".*"
+          "value": "[^\\n]*"
         }
       ]
     },
@@ -124,5 +124,6 @@
   "precedences": [],
   "externals": [],
   "inline": [],
-  "supertypes": []
+  "supertypes": [],
+  "reserved": {}
 }

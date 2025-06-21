@@ -1,3 +1,9 @@
+/**
+ * @file Tree-sitter grammar for kanata
+ * @author postsolar
+ * @license MIT
+ */
+
 /// <reference types="tree-sitter-cli/dsl" />
 // @ts-check
 
@@ -9,7 +15,7 @@ module.exports = grammar({
     $.block_comment,
     /\n/,
     /\r/,
-    /\p{Zs}/
+    /\p{Zs}/,
   ],
 
   // TODO
@@ -18,7 +24,7 @@ module.exports = grammar({
   rules: {
     kanata: $ => repeat($.list),
 
-    line_comment: _ => seq(';;', /.*/),
+    line_comment: _ => seq(';;', /[^\n]*/),
 
     block_comment: _ => seq('#|', /[.\n\r]*/, '|#'),
 
@@ -27,11 +33,11 @@ module.exports = grammar({
     _item: $ => choice(
       $.unquoted_item,
       $.quoted_item,
-      $.list
+      $.list,
     ),
 
     unquoted_item: _ => /[^\s)("]+/,
 
-    quoted_item: _ => seq('"', /[^"]*/, '"')
+    quoted_item: _ => seq('"', /[^"]*/, '"'),
   }
 });
